@@ -1,22 +1,22 @@
 import './styles/App.css';
+import Home from './pages/home.js';
+import Navbar from './components/navbar';
+import { Route, Routes } from 'react-router-dom';
+import AllProducts from './components/allProducts';
+import AllCategory from './components/allCategory';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return ( 
+    <>
+    <Navbar />
+    <div>
+      <Routes>        
+        <Route path="/"  element={<Home/>} />
+        <Route path="/allProducts"  element={<AllProducts />}/>
+        <Route path="/allCategories"  element={<AllCategory/>}/>
+      </Routes>
     </div>
+    </>
   );
 }
 
